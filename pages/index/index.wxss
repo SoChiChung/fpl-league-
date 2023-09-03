@@ -63,3 +63,24 @@
   border-radius: 5%;
   margin: 10rpx;
 }
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+picker {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+
+radio {
+  padding: 4px;
+}
+
+.search-box>button {
+  color: aquamarine;
+  background-color: black;
+  margin-top: 10px;
+}

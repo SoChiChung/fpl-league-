@@ -29,13 +29,18 @@
   <view class="search-bg">
     <view class="search" hover-class="none" hover-stop-propagation="false">
       <view class="search-box" hover-class="none" hover-stop-propagation="false">
-        <input class="" auto-focus placeholder="输入联赛id：" type="number" bindinput="bindKeyInput"/>
-        选择联赛类型
-        <radio-group class="radio-group" bindchange="radioChange">
-          <radio class="radio" wx:for-items="{{types}}" wx:key="name" value="{{item.name}}" >
-            <text>{{item.name}}</text>
-          </radio>
-        </radio-group>
+        <input class="" auto-focus placeholder="输入联赛id：" type="number" bindinput="bindKeyInput" />
+        <view class="search-container">
+          <radio-group class="radio-group" bindchange="radioChange">
+            <radio class="radio" wx:for-items="{{types}}" wx:key="name" value="{{item.name}}">
+              <text>{{item.name}}</text>
+            </radio>
+          </radio-group>
+
+          <picker mode="selector" range="{{range}}" bindchange="handleChange">
+            <view class="picker">{{selectedValue}}</view>
+          </picker>
+        </view>
         <button bindtap="search">确定</button>
       </view>
       <view class="result" hover-class="none" hover-stop-propagation="false"></view>
